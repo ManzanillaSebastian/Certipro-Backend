@@ -1,3 +1,4 @@
+"""Model for the Work Groups table"""
 from django.db import models
 from django.conf import settings
 from .departments import Department
@@ -8,14 +9,14 @@ class WorkGroup(models.Model):
     Manages both its supervisor and its assigned members.
     """
     name = models.CharField(max_length=255)
-    
+
     # Relationship with Department
     department = models.ForeignKey(
         Department,
         on_delete=models.CASCADE,
         related_name='work_groups'
     )
-    
+
     # Group Supervisor (User)
     supervisor = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -24,7 +25,7 @@ class WorkGroup(models.Model):
         blank=True,
         null=True
     )
-    
+
     # Many-to-Many relationship for group members
     members = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
