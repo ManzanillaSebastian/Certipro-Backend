@@ -1,7 +1,9 @@
+"""Everything related to the user"""
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class UserRole(models.TextChoices):
+    """User role text choices class"""
     ADMIN = 'ADMIN', 'Administrator'
     SUPERVISOR = 'SUPERVISOR', 'Supervisor'
     MEMBER = 'MEMBER', 'Team Member'

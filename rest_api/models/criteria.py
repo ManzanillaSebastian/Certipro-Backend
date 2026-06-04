@@ -9,7 +9,7 @@ class Criterion(models.Model):
     code = models.CharField(max_length=100)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-    
+
     # Relationship with the Certification Model
     # As agreed, if the model is deleted, its criteria are deleted too.
     certification_model = models.ForeignKey(

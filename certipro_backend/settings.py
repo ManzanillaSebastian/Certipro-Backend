@@ -1,3 +1,4 @@
+"""Settings for the django CertiPro backend"""
 from pathlib import Path
 
 # Neon
