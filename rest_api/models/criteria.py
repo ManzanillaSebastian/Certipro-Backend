@@ -1,3 +1,4 @@
+"""Model for the criteria table"""
 from django.db import models
 from .certification_models import CertificationModel
 
@@ -17,7 +18,7 @@ class Criterion(models.Model):
         on_delete=models.CASCADE,
         related_name='criteria'
     )
-    
+
     # Self-reference for sub-criteria (Recursive relationship)
     # Allows a criterion to have a parent criterion.
     parent = models.ForeignKey(
@@ -29,6 +30,7 @@ class Criterion(models.Model):
     )
 
     class Meta:
+        """Meta class for additional settings"""
         verbose_name_plural = "Criteria"
         # Optional: ensuring code uniqueness per certification model
         unique_together = ('certification_model', 'code')
