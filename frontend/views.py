@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 def landing_page(request):
     context = {}
-    return render(request, "select_profile.html", context)
+    return render(request, "frontend/select_profile.html", context)
