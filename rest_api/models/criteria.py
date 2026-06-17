@@ -2,23 +2,33 @@
 from django.db import models
 from .certification_models import CertificationModel
 
+class CriterionPriority(models.TextChoices):
+    HIGH = 'High', 'Alta'
+    MEDIUM = 'Medium', 'Media'
+    LOW = 'Low', 'Baja'
+
 class Criterion(models.Model):
     """
     Represents a evaluation criterion or sub-criterion within a certification model.
     Supports a tree-like hierarchical structure via self-reference.
     """
+    priority = models.CharField(
+        max_length=20,
+        choices=CriterionPriority.choices,
+        default=CriterionPriority.LOW
+    )
+
     code = models.CharField(max_length=100)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-
+    
     # Relationship with the Certification Model
-    # As agreed, if the model is deleted, its criteria are deleted too.
     certification_model = models.ForeignKey(
         CertificationModel,
         on_delete=models.CASCADE,
         related_name='criteria'
     )
-
+    
     # Self-reference for sub-criteria (Recursive relationship)
     # Allows a criterion to have a parent criterion.
     parent = models.ForeignKey(
@@ -30,9 +40,7 @@ class Criterion(models.Model):
     )
 
     class Meta:
-        """Meta class for additional settings"""
         verbose_name_plural = "Criteria"
-        # Optional: ensuring code uniqueness per certification model
         unique_together = ('certification_model', 'code')
 
     def __str__(self):
