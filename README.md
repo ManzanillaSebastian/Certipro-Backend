@@ -1,5 +1,7 @@
 # Certipro-Backend
 
+To see the frontend of the app: https://github.com/jruano-espol/Certipro-Frontend/
+
 ## Setting up
 
 First create a python virtual environment.
