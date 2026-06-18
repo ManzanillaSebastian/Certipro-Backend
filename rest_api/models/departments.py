@@ -1,7 +1,6 @@
-
 from django.db import models
 from django.conf import settings
-from .branches import Branch  # Imported to establish the relationship
+from .branches import Branch
 
 class Department(models.Model):
     """

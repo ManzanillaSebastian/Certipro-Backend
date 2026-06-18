@@ -1,4 +1,3 @@
-# tu_app/models/uploaded_evidences.py
 from django.db import models
 from .tasks import Task
 from .required_evidences import RequiredEvidence
