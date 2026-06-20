@@ -24,10 +24,8 @@ python manage.py runserver
 6. En la parte inferior, en la pestaña *Puertos*, hacer click derecho en el puerto recién abierto (8000), seleccionar: Visibilidad -> Público.
 7. En el frontend, utilizar el enlace que ofrece el puerto desplegado y añadirle */api* al final. Debería tener el siguiente formato:
 `https://<nombre del codespace>-<código>-8000.app.github.dev/api` 
-* 
-
-*  
-**Producción (Render/Railway):** `TODO`
+ 
+**Producción:** `TODO`
 * 
 ---
 
@@ -67,11 +65,13 @@ Si la respuesta es exitosa (200 OK), la respuesta JSON será:
 
 ### Sucursales (Branches)
 **Obtener todas las sucursales o crear nueva sucursal**
+
 Endpoint: `/branches/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
+
 Endpoint: `/branches/<id>/ `
 
 Métodos: 
@@ -91,11 +91,13 @@ Métodos:
 
 ### Departamentos (Departments)
 **Obtener todos los departamentos o crear nuevo departamento**
+
 Endpoint: `/departments/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
+
 Endpoint: `/departments/<id>/`
 
 Métodos:
@@ -104,6 +106,7 @@ Métodos:
 - DELETE: borrar el departamento
 
 **Filtrar por sucursal específica**
+
 Endpoint: `/departments/?branch=<id_sucursal>`
 
 Método: GET
@@ -120,11 +123,13 @@ Método: GET
 
 ### Grupos de Trabajo (WorkGroups)
 **Obtener todos los grupos o crear nuevo grupo**
+
 Endpoint: `/work-groups/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
+
 Endpoint: `/work_groups/<id>/`
 
 Métodos:
@@ -133,6 +138,7 @@ Métodos:
 - DELETE: borrar el grupo
 
 **Filtrar por departamento específico**
+
 Endpoint: `/work_groups/?department=<id_departamento>`
 
 Método: GET
@@ -149,11 +155,13 @@ Método: GET
 
 ### Modelos de Certificación (CertificationModels)
 **Obtener todos los modelos o crear nuevo modelo**
+
 Endpoint: `/certification-models/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
+
 Endpoint: ``/certification-models/<id>/``
 
 Métodos:
@@ -174,11 +182,13 @@ Métodos:
 
 ### Periodos de Evaluación (Periods)
 **Obtener todos los periodos o crear nuevo periodo**
+
 Endpoint: `/periods/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
+
 Endpoint: `/periods/<id>/`
 
 Métodos:
@@ -187,6 +197,7 @@ Métodos:
 - DELETE: borrar el periodo
 
 **Filtrar por modelo de certifiación específico**
+
 Endpoint: `/periods/?certification_model=<id_modelo_certificacion>`
 
 Método: GET
@@ -206,12 +217,14 @@ Método: GET
 
 ### Criterios (Criteria)
 **Obtener todos los criterios o crear nuevo criterio**
+
 Endpoint: `/criteria/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
-Endpoint: /criteria/<id>/
+
+Endpoint: `/criteria/<id>/`
 
 Métodos:
 - GET: obtener detalles del criterio
@@ -219,6 +232,7 @@ Métodos:
 - DELETE: borrar el criterio
 
 **Filtrar criterios raíces o hijos**
+
 Endpoints:
 
 `/criteria/?parent=null` (Trae solo los padres)
@@ -228,6 +242,7 @@ Endpoints:
 Método: GET
 
 **Filtrar por modelo de certifiación específico**
+
 Endpoint: `/crtieria/?certification_model=<id_modelo_certificacion>`
 
 Método: GET
@@ -246,11 +261,13 @@ Método: GET
 
 ### Requerimientos Base (Requirements)
 **Obtener todos los requerimientos o crear nuevo requerimiento**
+
 Endpoint: `/requirements/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
+
 Endpoint: `/requirements/<id>/`
 
 Métodos:
@@ -270,11 +287,13 @@ Métodos:
 
 ### Versiones de Requerimientos (RequirementVersions)
 **Obtener todas las versiones o crear nueva versión**
+
 Endpoint: `/requirement_versions/`
 
 Métodos: GET o POST respectivamente
 
 Operaciones filtradas por id
+
 Endpoint: `/requirement_versions/<id>/`
 
 Métodos:
@@ -283,6 +302,7 @@ Métodos:
 - DELETE: borrar la versión
 
 **Filtrar por requerimiento específico**
+
 Endpoint: `/requirement_versions/?requirement=<id_requerimiento>`
 
 Método: GET
@@ -299,11 +319,13 @@ Método: GET
 
 ### Tareas (Tasks)
 **Obtener todas las tareas o crear nueva tarea**
+
 Endpoint: `/tasks/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
+
 Endpoint: `/tasks/<id>/`
 
 Métodos:
@@ -313,11 +335,13 @@ Métodos:
 - DELETE: borrar la tarea
 
 **Filtrar tareas por grupo responsable**
+
 Endpoint: `/tasks/?group_responsible=<id_grupo>`
 
 Método: GET
 
 **Filtrar por criterio específico**
+
 Endpoint: `/tasks/?crtierion=<id_criterio>`
 
 Método: GET
@@ -338,11 +362,13 @@ Método: GET
 
 ### Evidencias Requeridas (RequiredEvidences)
 **Obtener todas las evidencias requeridas o crear una nueva**
+
 Endpoint: `/required_evidences/`
 
 Métodos: GET o POST respectivamente
 
 Operaciones filtradas por id
+
 Endpoint: `/required_evidences/<id>/`
 
 Métodos:
@@ -352,6 +378,7 @@ Métodos:
 - DELETE: borrar el slot
 
 **Filtrar por versión de requerimiento específica**
+
 Endpoint: `/required_evidences/?requirement_version=<id_versión_requerimiento>`
 
 Método: GET
@@ -369,6 +396,7 @@ Método: GET
 
 ### Evidencias Subidas (UploadedEvidences)
 **Obtener todas las evidencias subidas o subir una nueva**
+
 Endpoint: `/uploaded_evidences/`
 
 Métodos: GET o POST respectivamente
@@ -376,6 +404,7 @@ Métodos: GET o POST respectivamente
 >IMPORTANTE: El POST para este endpoint NO usa JSON, debe enviarse como formato multipart/form-data en el cuerpo de la petición debido al archivo físico.
 
 **Operaciones filtradas por id**
+
 Endpoint: `/uploaded_evidences/<id>/`
 
 Métodos:
@@ -385,6 +414,7 @@ Métodos:
 - DELETE: borrar la evidencia subida
 
 **Filtrar por evidencia requerida específico**
+
 Endpoint: `/periods/?certification_model=<id_sucursal>`
 
 Método: GET
@@ -402,11 +432,13 @@ file_path: [Seleccionar Archivo Binario desde PC]
 
 ### Retroalimentaciones (Feedbacks)
 Obtener todas las retroalimentaciones o crear una nuevo retroalimentación
+
 Endpoint: `/feedbacks/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
+
 Endpoint: `/feedbacks/<id>/`
 
 Métodos:
@@ -416,6 +448,7 @@ Métodos:
 - DELETE: borrar el feedback
 
 **Filtrar por evidencia subida específica**
+
 Endpoint: `/feedbacks/?uploaded_evidence=<id_evidencia_subida>`
 
 Método: GET
