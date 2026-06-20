@@ -1,5 +1,6 @@
 # rest_api/views/tasks.py
 """View for CRUD operations on the tasks table"""
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from ..models.tasks import Task
 from ..serializers.tasks import TaskSerializer
