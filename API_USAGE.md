@@ -1,8 +1,8 @@
-# 📖 CertiPro - Uso de la API REST
+# CertiPro - Uso de la API REST
 
 Este documento detalla todos los puntos de acceso (endpoints) disponibles para el frontend.
 
-## 🌐 Configuración de URLs Base
+## Configuración de URLs Base
 
 * **Desarrollo (Codespaces):** 
 
