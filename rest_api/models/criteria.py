@@ -3,9 +3,9 @@ from django.db import models
 from .certification_models import CertificationModel
 
 class CriterionPriority(models.TextChoices):
-    HIGH = 'High', 'Alta'
-    MEDIUM = 'Medium', 'Media'
-    LOW = 'Low', 'Baja'
+    HIGH = 'Alta'
+    MEDIUM = 'Media'
+    LOW = 'Baja'
 
 class Criterion(models.Model):
     """
