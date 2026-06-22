@@ -9,6 +9,7 @@ class CriterionViewSet(QueryParamFilterMixin, viewsets.ModelViewSet):
     """
     ViewSet for viewing and managing evaluation criteria and sub-criteria.
     """
+    queryset = Criterion.objects.all().order_by('code')
     serializer_class = CriterionSerializer
     permission_classes = [IsAuthenticated]
     allowed_filters = ['id', 'certification_model', 'parent', 'priority', 'code', 'title']
