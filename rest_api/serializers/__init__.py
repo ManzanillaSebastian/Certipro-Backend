@@ -10,3 +10,4 @@ from .tasks import *
 from .required_evidences import *
 from .uploaded_evidences import *
 from .feedbacks import *
+from .users import *

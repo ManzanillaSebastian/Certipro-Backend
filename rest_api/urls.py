@@ -18,6 +18,7 @@ router.register(r'tasks', TaskViewSet, basename='task')
 router.register(r'required_evidences', RequiredEvidenceViewSet, basename='required_evidence')
 router.register(r'uploaded_evidences', UploadedEvidenceViewSet, basename='uploaded_evidence')
 router.register(r'feedbacks', FeedbackViewSet, basename='feedback')
+router.register(r'users', UserViewSet, basename='user')
 
 urlpatterns = [
     path('auth/login/', LoginView.as_view(), name='login'),
