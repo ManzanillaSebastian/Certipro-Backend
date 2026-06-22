@@ -156,13 +156,13 @@ Método: GET
 ### Modelos de Certificación (CertificationModels)
 **Obtener todos los modelos o crear nuevo modelo**
 
-Endpoint: `/certification-models/`
+Endpoint: `/certification_models/`
 
 Métodos: GET o POST respectivamente
 
 **Operaciones filtradas por id**
 
-Endpoint: ``/certification-models/<id>/``
+Endpoint: ``/certification_models/<id>/``
 
 Métodos:
 - GET: obtener detalles del modelo
