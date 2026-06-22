@@ -2,11 +2,6 @@ from django.db import models
 from .tasks import Task
 from .required_evidences import RequiredEvidence
 
-class EvidenceStatus(models.TextChoices):
-    PENDING = 'PENDING', 'Pending Review'
-    APPROVED = 'APPROVED', 'Approved'
-    REJECTED = 'REJECTED', 'Rejected'
-
 class UploadedEvidence(models.Model):
     """
     Represents the actual file uploaded by a work group to fulfill 
@@ -25,7 +20,6 @@ class UploadedEvidence(models.Model):
         on_delete=models.CASCADE,
         related_name='uploaded_evidences'
     )
-    
     # Relationship with the slot definition (RequiredEvidence)
     required_evidence = models.ForeignKey(
         RequiredEvidence,
