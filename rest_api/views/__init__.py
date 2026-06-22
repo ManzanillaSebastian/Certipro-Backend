@@ -11,3 +11,4 @@ from .required_evidences import *
 from .uploaded_evidences import *
 from .feedbacks import *
 from .users import *
+from .work_group_members import *

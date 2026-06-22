@@ -14,6 +14,7 @@ router.register(r'requirement_versions', RequirementVersionViewSet, basename='re
 router.register(r'branches', BranchViewSet, basename='branch')
 router.register(r'departments', DepartmentViewSet, basename='department')
 router.register(r'work_groups', WorkGroupViewSet, basename='work_group')
+router.register(r'work_group_members', WorkGroupMemberViewSet, basename='work_group_member')
 router.register(r'tasks', TaskViewSet, basename='task')
 router.register(r'required_evidences', RequiredEvidenceViewSet, basename='required_evidence')
 router.register(r'uploaded_evidences', UploadedEvidenceViewSet, basename='uploaded_evidence')
