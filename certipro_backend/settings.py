@@ -89,6 +89,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://silver-space-goldfish-g447v9qpgwq939w6p-8000.app.github.dev",
+    "https://literate-space-yodel-975rw74p55pv2956r-8000.app.github.dev",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

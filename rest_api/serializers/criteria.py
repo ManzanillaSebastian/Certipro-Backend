@@ -9,4 +9,4 @@ class CriterionSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Criterion
-        fields = ['id', 'code', 'title', 'description', 'certification_model', 'parent']
+        fields = ['id', 'priority', 'code', 'title', 'description', 'certification_model', 'parent']
