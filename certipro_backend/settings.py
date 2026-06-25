@@ -40,7 +40,7 @@ SECRET_KEY = "django-insecure-)f@y%z9cg$$y^7qg998l-^wsmweu-d^=$ycr+n@l)mw@--*rs=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -91,6 +91,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://silver-space-goldfish-g447v9qpgwq939w6p-8000.app.github.dev",
     "https://literate-space-yodel-975rw74p55pv2956r-8000.app.github.dev",
 ]
+
+# CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS = True
 
