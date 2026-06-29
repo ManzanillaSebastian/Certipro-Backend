@@ -1,12 +1,15 @@
-from .users import *
-from .requirements import *
-from .branches import *
-from .departments import *
-from .certification_models import *
-from .periods import *
-from .work_groups import *
-from .criteria import *
-from .required_evidences import *
-from .tasks import *
-from .uploaded_evidences import *
-from .feedbacks import *
+from .users import User as User, UserRole as UserRole
+from .requirements import (
+    Requirement as Requirement,
+    RequirementVersion as RequirementVersion,
+)
+from .branches import Branch as Branch
+from .departments import Department as Department
+from .certification_models import CertificationModel as CertificationModel
+from .periods import Period as Period
+from .work_groups import WorkGroup as WorkGroup, WorkGroupMember as WorkGroupMember
+from .criteria import Criterion as Criterion
+from .required_evidences import RequiredEvidence as RequiredEvidence
+from .tasks import Task as Task
+from .uploaded_evidences import UploadedEvidence as UploadedEvidence
+from .feedbacks import Feedback as Feedback

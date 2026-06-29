@@ -1,1 +1,16 @@
-from .models import *
+from .models import (
+    Branch as Branch,
+    CertificationModel as CertificationModel,
+    Criterion as Criterion,
+    Department as Department,
+    Feedback as Feedback,
+    Period as Period,
+    Requirement as Requirement,
+    RequirementVersion as RequirementVersion,
+    Task as Task,
+    UploadedEvidence as UploadedEvidence,
+    User as User,
+    UserRole as UserRole,
+    WorkGroup as WorkGroup,
+    WorkGroupMember as WorkGroupMember,
+)

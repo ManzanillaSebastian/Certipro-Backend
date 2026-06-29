@@ -1,14 +1,14 @@
-from .authentication import *
-from .certification_models import *
-from .periods import *
-from .criteria import *
-from .requirements import *
-from .branches import *
-from .departments import *
-from .work_groups import *
-from .tasks import *
-from .required_evidences import *
-from .uploaded_evidences import *
-from .feedbacks import *
-from .users import *
-from .work_group_members import *
+from .authentication import LoginView as LoginView
+from .certification_models import CertificationModelViewSet as CertificationModelViewSet
+from .periods import PeriodViewSet as PeriodViewSet
+from .criteria import CriterionViewSet as CriterionViewSet
+from .requirements import RequirementViewSet as RequirementViewSet
+from .branches import BranchViewSet as BranchViewSet
+from .departments import DepartmentViewSet as DepartmentViewSet
+from .work_groups import WorkGroupViewSet as WorkGroupViewSet
+from .tasks import TaskViewSet as TaskViewSet
+from .required_evidences import RequiredEvidenceViewSet as RequiredEvidenceViewSet
+from .uploaded_evidences import UploadedEvidenceViewSet as UploadedEvidenceViewSet
+from .feedbacks import FeedbackViewSet as FeedbackViewSet
+from .users import UserViewSet as UserViewSet
+from .work_group_members import WorkGroupMemberViewSet as WorkGroupMemberViewSet
