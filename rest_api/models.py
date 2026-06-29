@@ -12,5 +12,4 @@ from .models import (
     User as User,
     UserRole as UserRole,
     WorkGroup as WorkGroup,
-    WorkGroupMember as WorkGroupMember,
 )

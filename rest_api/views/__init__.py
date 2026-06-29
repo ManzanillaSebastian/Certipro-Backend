@@ -2,7 +2,10 @@ from .authentication import LoginView as LoginView
 from .certification_models import CertificationModelViewSet as CertificationModelViewSet
 from .periods import PeriodViewSet as PeriodViewSet
 from .criteria import CriterionViewSet as CriterionViewSet
-from .requirements import RequirementViewSet as RequirementViewSet
+from .requirements import (
+    RequirementViewSet as RequirementViewSet,
+    RequirementVersionViewSet as RequirementVersionViewSet,
+)
 from .branches import BranchViewSet as BranchViewSet
 from .departments import DepartmentViewSet as DepartmentViewSet
 from .work_groups import WorkGroupViewSet as WorkGroupViewSet
