@@ -8,8 +8,8 @@ from .departments import Department as Department
 from .certification_models import CertificationModel as CertificationModel
 from .periods import Period as Period
 from .work_groups import WorkGroup as WorkGroup
-from .criteria import Criterion as Criterion
+from .criteria import Criterion as Criterion, CriterionPriority as CriterionPriority
 from .required_evidences import RequiredEvidence as RequiredEvidence
 from .tasks import Task as Task
 from .uploaded_evidences import UploadedEvidence as UploadedEvidence
-from .feedbacks import Feedback as Feedback
+from .feedbacks import Feedback as Feedback, FeedbackResult as FeedbackResult
