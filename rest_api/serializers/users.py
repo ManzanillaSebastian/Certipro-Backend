@@ -1,6 +1,7 @@
 """Serializer for CRUD operations on the users table"""
 
 from rest_framework import serializers
+
 from ..models.users import User
 
 

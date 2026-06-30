@@ -1,6 +1,7 @@
 from django.db import models
-from .tasks import Task
+
 from .required_evidences import RequiredEvidence
+from .tasks import Task
 
 
 class UploadedEvidence(models.Model):

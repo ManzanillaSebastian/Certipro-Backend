@@ -1,14 +1,14 @@
 """Settings for the django CertiPro backend"""
 
-from pathlib import Path
-
 # Neon
 import os
-from dotenv import load_dotenv
-from urllib.parse import urlparse, parse_qsl
 
 # Rest
 from datetime import timedelta
+from pathlib import Path
+from urllib.parse import parse_qsl, urlparse
+
+from dotenv import load_dotenv
 
 load_dotenv()
 

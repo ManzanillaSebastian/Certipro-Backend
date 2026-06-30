@@ -1,0 +1,15 @@
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+# Excluir de forma automática las migraciones generadas por Django
+extend-exclude = ["**/migrations/*"]
+
+[tool.ruff.lint]
+# Activamos Pyflakes (F), Pycodestyle (E, W) e Isort (I)
+select = ["F", "E", "W", "I"]
+
+ignore = ["E501"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10

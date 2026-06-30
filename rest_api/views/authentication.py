@@ -1,6 +1,7 @@
 """View for the authentication process"""
 
 from rest_framework_simplejwt.views import TokenObtainPairView
+
 from ..serializers.authentication import CustomTokenObtainPairSerializer
 
 

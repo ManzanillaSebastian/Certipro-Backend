@@ -2,9 +2,10 @@
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .filter_mixins import QueryParamFilterMixin
+
 from ..models.users import User
 from ..serializers.users import UserSerializer
+from .filter_mixins import QueryParamFilterMixin
 
 
 class UserViewSet(QueryParamFilterMixin, viewsets.ModelViewSet):

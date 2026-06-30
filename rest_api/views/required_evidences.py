@@ -2,9 +2,10 @@
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .filter_mixins import QueryParamFilterMixin
+
 from ..models.required_evidences import RequiredEvidence
 from ..serializers.required_evidences import RequiredEvidenceSerializer
+from .filter_mixins import QueryParamFilterMixin
 
 
 class RequiredEvidenceViewSet(QueryParamFilterMixin, viewsets.ModelViewSet):

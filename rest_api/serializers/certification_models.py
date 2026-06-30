@@ -1,6 +1,7 @@
 """Serializer for CRUD operations on certification_models table"""
 
 from rest_framework import serializers
+
 from ..models.certification_models import CertificationModel
 
 

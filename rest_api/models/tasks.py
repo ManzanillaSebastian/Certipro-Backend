@@ -1,4 +1,5 @@
 from django.db import models
+
 from .criteria import Criterion
 from .requirements import RequirementVersion
 from .work_groups import WorkGroup

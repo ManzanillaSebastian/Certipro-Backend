@@ -2,9 +2,10 @@
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .filter_mixins import QueryParamFilterMixin
+
 from ..models.certification_models import CertificationModel
 from ..serializers.certification_models import CertificationModelSerializer
+from .filter_mixins import QueryParamFilterMixin
 
 
 class CertificationModelViewSet(QueryParamFilterMixin, viewsets.ModelViewSet):

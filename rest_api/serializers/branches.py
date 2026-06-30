@@ -1,6 +1,7 @@
 """Serializer for CRUD operations on the branches table"""
 
 from rest_framework import serializers
+
 from ..models.branches import Branch
 
 
