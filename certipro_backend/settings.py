@@ -36,12 +36,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-)f@y%z9cg$$y^7qg998l-^wsmweu-d^=$ycr+n@l)mw@--*rs="
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-cambiame-en-produccion-12345")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -89,11 +89,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://silver-space-goldfish-g447v9qpgwq939w6p-8000.app.github.dev",
-    "https://literate-space-yodel-975rw74p55pv2956r-8000.app.github.dev",
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
 ]
-
-# CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS = True
 
