@@ -2,6 +2,7 @@
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
+
 from ..models.criteria import Criterion
 from ..serializers.criteria import CriterionSerializer
 from .filter_mixins import QueryParamFilterMixin

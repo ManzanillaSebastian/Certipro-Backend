@@ -2,9 +2,10 @@
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .filter_mixins import QueryParamFilterMixin
+
 from ..models.feedbacks import Feedback
 from ..serializers.feedbacks import FeedbackSerializer
+from .filter_mixins import QueryParamFilterMixin
 
 
 class FeedbackViewSet(QueryParamFilterMixin, viewsets.ModelViewSet):

@@ -2,9 +2,10 @@
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .filter_mixins import QueryParamFilterMixin
+
 from ..models.work_groups import WorkGroup
 from ..serializers.work_groups import WorkGroupSerializer
+from .filter_mixins import QueryParamFilterMixin
 
 
 class WorkGroupViewSet(QueryParamFilterMixin, viewsets.ModelViewSet):

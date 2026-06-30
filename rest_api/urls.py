@@ -1,24 +1,53 @@
 """All urls available for api requests"""
 
 # rest_api/urls.py
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
+
+from .views import (
+    BranchViewSet as BranchViewSet,
+)
 from .views import (
     CertificationModelViewSet as CertificationModelViewSet,
-    PeriodViewSet as PeriodViewSet,
+)
+from .views import (
     CriterionViewSet as CriterionViewSet,
-    RequirementViewSet as RequirementViewSet,
-    RequirementVersionViewSet as RequirementVersionViewSet,
-    BranchViewSet as BranchViewSet,
+)
+from .views import (
     DepartmentViewSet as DepartmentViewSet,
-    WorkGroupViewSet as WorkGroupViewSet,
-    WorkGroupMemberViewSet as WorkGroupMemberViewSet,
-    TaskViewSet as TaskViewSet,
-    RequiredEvidenceViewSet as RequiredEvidenceViewSet,
-    UploadedEvidenceViewSet as UploadedEvidenceViewSet,
+)
+from .views import (
     FeedbackViewSet as FeedbackViewSet,
-    UserViewSet as UserViewSet,
+)
+from .views import (
     LoginView as LoginView,
+)
+from .views import (
+    PeriodViewSet as PeriodViewSet,
+)
+from .views import (
+    RequiredEvidenceViewSet as RequiredEvidenceViewSet,
+)
+from .views import (
+    RequirementVersionViewSet as RequirementVersionViewSet,
+)
+from .views import (
+    RequirementViewSet as RequirementViewSet,
+)
+from .views import (
+    TaskViewSet as TaskViewSet,
+)
+from .views import (
+    UploadedEvidenceViewSet as UploadedEvidenceViewSet,
+)
+from .views import (
+    UserViewSet as UserViewSet,
+)
+from .views import (
+    WorkGroupMemberViewSet as WorkGroupMemberViewSet,
+)
+from .views import (
+    WorkGroupViewSet as WorkGroupViewSet,
 )
 
 # Routers

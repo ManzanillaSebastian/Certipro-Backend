@@ -1,7 +1,8 @@
 """Model for the Work Groups table"""
 
-from django.db import models
 from django.conf import settings
+from django.db import models
+
 from .departments import Department
 
 

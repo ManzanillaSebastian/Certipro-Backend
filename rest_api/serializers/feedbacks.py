@@ -1,6 +1,7 @@
 """Serializer for CRUD operations on the feedbacks table"""
 
 from rest_framework import serializers
+
 from ..models.feedbacks import Feedback
 
 

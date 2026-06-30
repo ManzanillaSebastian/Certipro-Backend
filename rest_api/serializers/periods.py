@@ -1,6 +1,7 @@
 """Serializer for CRUD operations on periods table"""
 
 from rest_framework import serializers
+
 from ..models.periods import Period
 
 

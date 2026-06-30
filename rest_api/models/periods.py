@@ -1,4 +1,5 @@
 from django.db import models
+
 from .certification_models import CertificationModel
 
 

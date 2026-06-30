@@ -1,6 +1,7 @@
 """Serializer for CRUD operations on the criteria table"""
 
 from rest_framework import serializers
+
 from ..models.criteria import Criterion
 
 

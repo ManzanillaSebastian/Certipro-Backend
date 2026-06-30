@@ -1,6 +1,7 @@
 """Serializer for CRUD operations on the departments table"""
 
 from rest_framework import serializers
+
 from ..models.departments import Department
 
 
