@@ -149,3 +149,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+import os
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+        "OPTIONS": {
+            "access_key": os.getenv("SUPABASE_S3_ACCESS_KEY_ID"),
+            "secret_key": os.getenv("SUPABASE_S3_SECRET_ACCESS_KEY"),
+            "bucket_name": "certipro-storage",
+            "endpoint_url": (
+                f"https://{os.getenv('SUPABASE_PROJECT_ID')}.storage.supabase.co/storage/v1/s3"
+            ),
+            "region_name": "us-east-1",
+            "addressing_style": "path",
+            "signature_version": "s3v4",
+            "querystring_auth": False,
+            "file_overwrite": False,
+        },
+    },
+
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
