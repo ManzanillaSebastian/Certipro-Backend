@@ -24,7 +24,7 @@ class Task(models.Model):
     # Relationship with the global catalog (RequirementVersion)
     # If a requirement version is deleted/protected, we preserve or block here.
     requirement_version = models.ForeignKey(
-        RequirementVersion, on_delete=models.PROTECT, related_name="tasks"
+        RequirementVersion, on_delete=models.CASCADE, related_name="tasks"
     )
 
     # Relationship with the responsible team

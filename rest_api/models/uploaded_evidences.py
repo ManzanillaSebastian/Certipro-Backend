@@ -53,13 +53,14 @@ class UploadedEvidence(models.Model):
 
     task = models.ForeignKey(
         Task,
-        on_delete=models.CASCADE,
-        related_name="uploaded_evidences"
+        on_delete=models.SET_NULL,
+        related_name="uploaded_evidences",
+        null=True
     )
 
     required_evidence = models.ForeignKey(
         RequiredEvidence,
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name="uploaded_instances"
     )
 
