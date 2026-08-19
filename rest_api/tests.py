@@ -26,6 +26,9 @@ from .models import (
     FeedbackResult as FeedbackResult,
 )
 from .models import (
+    Notification as Notification,
+)
+from .models import (
     Period as Period,
 )
 from .models import (
@@ -249,7 +252,7 @@ class CertiProModelTestCase(TestCase):
 
     # 12. TEST: Feedback Model
     def test_feedback_evaluator_and_result(self):
-        """Valida que una revisión almacene correctamente la aprobación o el rechazo de evidencias."""
+        """Valida que una revisión almacene correctamente si una evidencia es aprobada o rechazada."""
         branch = Branch.objects.create(name="Sede Central")
         dept = Department.objects.create(name="Calidad", branch=branch)
         group = WorkGroup.objects.create(name="Auditores", department=dept)
@@ -279,10 +282,103 @@ class CertiProModelTestCase(TestCase):
         )
 
         feedback = Feedback.objects.create(
-            comment="El documento cumple con todos los estándares e indicadores exigidos.",
+            comment="El documento cumple con todos los requerimientos.",
             result_type=FeedbackResult.APPROVE,
             uploaded_evidence=evidence,
             evaluator=self.supervisor_user,
         )
         self.assertEqual(feedback.result_type, "APPROVE")
         self.assertEqual(feedback.evaluator, self.supervisor_user)
+
+    # 13. TEST: Notification Model
+    def test_rejected_feedback_notifies_work_group_members(self):
+        """Al rechazar una evidencia, cada miembro del grupo recibe una notificación."""
+        branch = Branch.objects.create(name="Sede Central")
+        dept = Department.objects.create(name="Calidad", branch=branch)
+        group = WorkGroup.objects.create(name="Auditores", department=dept)
+        group.members.add(self.member_user)
+
+        criterion = Criterion.objects.create(
+            code="C5", title="Auditoría", certification_model=self.cert_model
+        )
+
+        task = Task.objects.create(
+            title="Carga de Informes",
+            start_date=date(2026, 6, 1),
+            end_date=date(2026, 7, 1),
+            criterion=criterion,
+            requirement_version=self.req_version,
+            group_responsible=group,
+        )
+        slot = RequiredEvidence.objects.create(
+            title="Informe General",
+            file_type=".docx",
+            requirement_version=self.req_version,
+        )
+
+        fake_file = SimpleUploadedFile(
+            "informe.docx", b"data", content_type="application/msword"
+        )
+        evidence = UploadedEvidence.objects.create(
+            file_path=fake_file, task=task, required_evidence=slot
+        )
+
+        feedback = Feedback.objects.create(
+            comment="Falta la firma del responsable.",
+            result_type=FeedbackResult.REJECT,
+            uploaded_evidence=evidence,
+            evaluator=self.supervisor_user,
+        )
+
+        notifications = Notification.objects.filter(recipient=self.member_user)
+        self.assertEqual(notifications.count(), 1)
+
+        notification = notifications.first()
+        self.assertFalse(notification.is_read)
+        self.assertEqual(notification.uploaded_evidence, evidence)
+        self.assertEqual(notification.feedback, feedback)
+        self.assertIn("rechazada", notification.message)
+        self.assertIn(feedback.comment, notification.message)
+
+    def test_approved_feedback_does_not_notify(self):
+        """Una revisión aprobada no debe generar ninguna notificación de rechazo."""
+        branch = Branch.objects.create(name="Sede Central")
+        dept = Department.objects.create(name="Calidad", branch=branch)
+        group = WorkGroup.objects.create(name="Auditores", department=dept)
+        group.members.add(self.member_user)
+
+        criterion = Criterion.objects.create(
+            code="C6", title="Auditoría", certification_model=self.cert_model
+        )
+
+        task = Task.objects.create(
+            title="Carga de Informes",
+            start_date=date(2026, 6, 1),
+            end_date=date(2026, 7, 1),
+            criterion=criterion,
+            requirement_version=self.req_version,
+            group_responsible=group,
+        )
+        slot = RequiredEvidence.objects.create(
+            title="Informe General",
+            file_type=".docx",
+            requirement_version=self.req_version,
+        )
+
+        fake_file = SimpleUploadedFile(
+            "informe.docx", b"data", content_type="application/msword"
+        )
+        evidence = UploadedEvidence.objects.create(
+            file_path=fake_file, task=task, required_evidence=slot
+        )
+
+        Feedback.objects.create(
+            comment="Todo en orden.",
+            result_type=FeedbackResult.APPROVE,
+            uploaded_evidence=evidence,
+            evaluator=self.supervisor_user,
+        )
+
+        self.assertEqual(
+            Notification.objects.filter(recipient=self.member_user).count(), 0
+        )

@@ -4,6 +4,7 @@ from .certification_models import CertificationModelViewSet as CertificationMode
 from .criteria import CriterionViewSet as CriterionViewSet
 from .departments import DepartmentViewSet as DepartmentViewSet
 from .feedbacks import FeedbackViewSet as FeedbackViewSet
+from .notifications import NotificationViewSet as NotificationViewSet
 from .periods import PeriodViewSet as PeriodViewSet
 from .required_evidences import RequiredEvidenceViewSet as RequiredEvidenceViewSet
 from .requirements import (

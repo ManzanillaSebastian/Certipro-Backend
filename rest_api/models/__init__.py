@@ -5,6 +5,8 @@ from .criteria import CriterionPriority as CriterionPriority
 from .departments import Department as Department
 from .feedbacks import Feedback as Feedback
 from .feedbacks import FeedbackResult as FeedbackResult
+from .notifications import Notification as Notification
+from .notifications import NotificationType as NotificationType
 from .periods import Period as Period
 from .required_evidences import RequiredEvidence as RequiredEvidence
 from .requirements import (

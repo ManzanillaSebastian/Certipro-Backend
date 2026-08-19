@@ -23,6 +23,9 @@ from .views import (
     LoginView as LoginView,
 )
 from .views import (
+    NotificationViewSet as NotificationViewSet,
+)
+from .views import (
     PeriodViewSet as PeriodViewSet,
 )
 from .views import (
@@ -75,6 +78,7 @@ router.register(
     r"uploaded_evidences", UploadedEvidenceViewSet, basename="uploaded_evidence"
 )
 router.register(r"feedbacks", FeedbackViewSet, basename="feedback")
+router.register(r"notifications", NotificationViewSet, basename="notification")
 router.register(r"users", UserViewSet, basename="user")
 
 urlpatterns = [

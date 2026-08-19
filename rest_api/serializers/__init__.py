@@ -8,6 +8,7 @@ from .certification_models import (
 from .criteria import CriterionSerializer as CriterionSerializer
 from .departments import DepartmentSerializer as DepartmentSerializer
 from .feedbacks import FeedbackSerializer as FeedbackSerializer
+from .notifications import NotificationSerializer as NotificationSerializer
 from .periods import PeriodSerializer as PeriodSerializer
 from .required_evidences import RequiredEvidenceSerializer as RequiredEvidenceSerializer
 from .requirements import (
